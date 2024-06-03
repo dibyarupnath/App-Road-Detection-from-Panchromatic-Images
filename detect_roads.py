@@ -28,12 +28,12 @@ def display_image(image_path):
         print("Unable to open image file.")
 
 
-def main():
-    # Get the selected model type
-    model_type = sys.argv[1]
+def detect_rd(model_type, img_path):
+    # # Get the selected model type
+    # model_type = sys.argv[1]
 
-    # Get the sat image
-    img_path = sys.argv[2]
+    # # Get the sat image
+    # img_path = sys.argv[2]
 
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
@@ -87,14 +87,14 @@ def main():
     plt.imshow(x2, cmap='gray')
     plt.imshow(y, alpha=0.5)
     plt.axis('off')
-    plt.show()
-    output_path = os.path.join('static', 'output.png')
 
-    # Save the plot as output.png in the static folder
-    plt.savefig(output_path)
+    output_path = os.path.abspath(os.path.join(
+        os.getcwd(), 'static', 'output.png'))
+    print(output_path)
 
-    display_image(output_path)
+    # Save the plot as an image
+    plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
+    plt.close()
 
-
-if __name__ == "__main__":
-    main()
+    print(f"Plot saved to {output_path}")
+    return {output_path}

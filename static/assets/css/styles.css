@@ -74,12 +74,14 @@ body {
   padding: 10px;
   border-radius: 20px;
   position: absolute;
+  width: 30%;
   top: 250px;
   left: 525px;
   margin: 200px 0px;
   background-color: #adcfff;
   color: #222233;
   border: 1px solid #adcfff;
+  font-size: 20px;
 }
 
 .enter-site:hover {
@@ -96,8 +98,8 @@ body {
 .submit-button {
   cursor: pointer;
   padding: 3%;
-  margin: 4% 0% 4% 5%;
-  width: 260%;
+  margin: 4% 0% 4% 10%;
+  width: 210%;
   height: 20%;
   border-radius: 20px;
   background-color: #222233;
@@ -109,8 +111,8 @@ body {
 .submit-button:hover {
   cursor: pointer;
   padding: 3%;
-  margin: 4% 0% 4% 5%;
-  width: 260%;
+  margin: 4% 0% 4% 10%;
+  width: 210%;
   height: 20%;
   border-radius: 20px;
   transition: 0.4s ease;

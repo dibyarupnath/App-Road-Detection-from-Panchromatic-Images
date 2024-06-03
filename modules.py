@@ -4,6 +4,7 @@ import torch.nn.functional as F
 import resnet
 import swin_transformer
 
+
 class PredictionModule(nn.Module):
     def __init__(self, input_channels):
         super().__init__()
@@ -12,13 +13,15 @@ class PredictionModule(nn.Module):
                                        nn.ReLU(inplace=True))
         self.conf_layer = nn.Sequential(nn.Conv2d(256, 256, kernel_size=1),
                                         nn.ReLU(),
-                                        nn.Conv2d(256, 1, kernel_size=3, padding=1),
+                                        nn.Conv2d(
+                                            256, 1, kernel_size=3, padding=1),
                                         nn.Sigmoid())
 
     def forward(self, x):
         x = self.upfeature(x)
         conf = self.conf_layer(x)
         return conf
+
 
 class FPN(nn.Module):
     def __init__(self, in_channels):
@@ -73,15 +76,17 @@ class FPN(nn.Module):
 
         return final_feat_map
 
+
 def test():
     # backbone = resnet.ResNet50(img_channels=1) # Resnet-50
-    backbone = swin_transformer.swin_t(channels=1, window_size=8) # Swin-T
+    backbone = swin_transformer.swin_t(channels=1, window_size=8)  # Swin-T
     x = torch.rand(1, 1, 512, 512)
     y = backbone(x)
     # fpn = FPN(in_channels=[512, 1024, 2048]) # For Resnet
-    fpn = FPN(in_channels=[192, 384, 768]) # For Swin-T
+    fpn = FPN(in_channels=[192, 384, 768])  # For Swin-T
     feat = fpn(y)
     pred = PredictionModule(input_channels=feat.shape[1])
     out = pred(feat)
+
 
 test()
