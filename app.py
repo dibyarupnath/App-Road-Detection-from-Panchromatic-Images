@@ -51,10 +51,8 @@ def predict():
     # subprocess.run(['python', 'detect_roads.py', model_type, img_path])
     output = detect_rd(model_type, img_path)
 
-    # display_image(output)
-
-    # return redirect(url_for('detector'))
-    return render_template('road_detector.html', message=output)
+    img_path = img_path.replace('\\', '\\\\')
+    return render_template('road_detector.html', input_img_path=img_path, message=output)
 
 
 if __name__ == '__main__':
