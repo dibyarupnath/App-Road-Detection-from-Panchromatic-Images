@@ -28,7 +28,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><label>Input Satellite Image Path:</label></td>
+                            <td><label for="img_path">Input Satellite Image Path:</label></td>
                             <td><input type="text" id="img_path" name="img_path" required></td>
                             <br>
                         </tr>
@@ -59,9 +59,7 @@
                             <th><p>Output: Roads Detected</p></th>
                         </tr>
                         <tr>
-                            <td><p><img src="{{ input_img_path }}" alt=""></p></td>
-                            <!-- <td><p><img src="..\\test_data\\36.jpg" alt="" width="369" height="369"></p></td> -->
-
+                            <td><p><img src="{{ input_img_path }}" alt="" width="369" height="369"></p></td>
                             <td><p><img src="{{ message }}" alt=""><p></td>
                         </tr>
                     </table>
