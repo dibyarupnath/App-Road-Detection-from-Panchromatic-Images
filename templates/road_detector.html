@@ -53,16 +53,19 @@
                             <td><input class="submit-button" type="submit" value="Detect Roads" /></td>
                         </tr>
                         <!-- <tr><td><p class="result">Result</p></td></tr> -->
-                        <!-- <tr>
-                            <td><p class="Input: Remote-Sensing Satellite Image"><img src="input.jpg path" alt="Input: Satellite Image"></p></td>
-                            <td><p class="Output: Roads Detected"><img src="output.jpg path" alt="Output: Roads Detected"></p></td>
-                        </tr> -->
+                        <tr>
+                            <!-- <td><p class="Input: Remote-Sensing Satellite Image"><img src="input.jpg path" alt="Input: Satellite Image"></p></td> -->
+                            <td><p>Input: Satellite Image<br><img src="{{ img_path }}" alt="Input: Satellite Image"></p></td>
+                            <!-- {{message}} is a value passed from detect_roads.py that contains the relative path to output.png -->
+                            <td><p>Output: Roads Detected<br><img src="{{ message }}" alt="Output: Roads Detected"></p></td>
+                        </tr>
                     </table>
                 </form>
                 <!-- <h1>Matplotlib Plot</h1>
                 <img src="../static/output.png" alt="Matplotlib Plot"> -->
             </div>
         </div>
+        
     </body>
 </html>
 

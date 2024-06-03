@@ -96,5 +96,9 @@ def detect_rd(model_type, img_path):
     plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
     plt.close()
 
+    output_path = os.path.join('static', 'output.png')
+    output_path = output_path.replace('\\', '\\\\')
+    # output_path = output_path.replace(')', '\)')
+
     print(f"Plot saved to {output_path}")
-    return {output_path}
+    return output_path

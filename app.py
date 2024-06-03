@@ -16,13 +16,12 @@ from detect_roads import detect_rd
 
 
 def display_image(image_path):
-    try:
-        # Open an image file
-        image = Image.open(image_path)
-        # Display image
-        image.show()
-    except IOError:
-        print("Unable to open image file.")
+
+    # Open an image file
+    print("HAALLOOO", image_path)
+    image = Image.open(image_path)
+    # Display image
+    image.show()
 
 
 app = Flask(__name__, template_folder=os.path.join(
@@ -52,9 +51,10 @@ def predict():
     # subprocess.run(['python', 'detect_roads.py', model_type, img_path])
     output = detect_rd(model_type, img_path)
 
-    display_image(output)
+    # display_image(output)
 
-    return redirect(url_for('detector'))
+    # return redirect(url_for('detector'))
+    return render_template('road_detector.html', message=output)
 
 
 if __name__ == '__main__':
