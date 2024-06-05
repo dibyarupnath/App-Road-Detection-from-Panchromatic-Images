@@ -14,3 +14,7 @@ function printImage() {
   // Append image to container
   imageContainer.appendChild(img);
 }
+
+function handlerror(img) {
+  img.style.display = 'none';
+}

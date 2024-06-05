@@ -50,6 +50,7 @@
                         <tr>
                             <td><input class="submit-button" type="submit" value="Detect Roads" /></td>
                         </tr>
+                       
                         <tr>
                             <!-- <td><p class="Input: Remote-Sensing Satellite Image"><img src="input.jpg path" alt="Input: Satellite Image"></p></td> -->
                             <!-- <th><p>Input: Satellite Image<br><img src="{{ img_path }}" alt="Input: Satellite Image"></p></th> -->
@@ -59,8 +60,9 @@
                             <th><p>Output: Roads Detected</p></th>
                         </tr>
                         <tr>
-                            <td><p><img src="{{ input_img_path }}" alt="" width="369" height="369"></p></td>
-                            <td><p><img src="{{ message }}" alt=""><p></td>
+                            
+                            <td><p><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"></p></td>
+                            <td><p><img src="{{ message }}"  alt="" width="369" height="369"></p></td>
                         </tr>
                     </table>
                 </form>

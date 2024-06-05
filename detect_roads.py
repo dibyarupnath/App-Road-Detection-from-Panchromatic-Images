@@ -11,7 +11,6 @@ from roadseg_nn import RoadSegNN
 from segnet import SegNet
 from utils import seeding, epoch_time
 from PIL import Image
-import cv2
 import torchvision.transforms as transforms
 import numpy as np
 import sys
