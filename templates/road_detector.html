@@ -44,30 +44,32 @@
                                     <option value="Swin-T">RoadSegNN (with Swin-T backbone)</option>
 
                                     <option value="SegNet">SegNet</option>
+
+                                    <option value="Blank">Blank Output</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td><input class="submit-button" type="submit" value="Detect Roads" /></td>
                         </tr>
-                       
+                        <tr>
+                            <td colspan="2"><p><strong>Model: </strong>{{ model_type_output }}</p></td>
+                        </tr>
                         <tr>
                             <!-- <td><p class="Input: Remote-Sensing Satellite Image"><img src="input.jpg path" alt="Input: Satellite Image"></p></td> -->
                             <!-- <th><p>Input: Satellite Image<br><img src="{{ img_path }}" alt="Input: Satellite Image"></p></th> -->
-                            <th><p>Input: Satellite Image<br></p></th>
+                            <th><p>Input: Satellite Image<br/><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"/></p></th>
 
-                            <!-- {{message}} is a value passed from detect_roads.py that contains the relative path to output.png -->
-                            <th><p>Output: Roads Detected</p></th>
+                            <!-- {{ output_img }} is a value passed from detect_roads.py that contains the relative path to output.png -->
+                            <td><p><strong>Output: Roads Detected</strong><br/><img src="{{ output_img }}"  alt="" width="369" height="369"/></p></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             
-                            <td><p><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"></p></td>
-                            <td><p><img src="{{ message }}"  alt="" width="369" height="369"></p></td>
-                        </tr>
+                            <td><p><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"/></p></td>
+                            <td><p><img src="{{ output_img }}"  alt="" width="369" height="369"/></p></td>
+                        </tr> -->
                     </table>
                 </form>
-                <!-- <h1>Matplotlib Plot</h1>
-                <img src="../static/output.png" alt="Matplotlib Plot"> -->
             </div>
         </div>
         
