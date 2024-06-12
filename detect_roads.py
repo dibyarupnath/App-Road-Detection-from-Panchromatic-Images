@@ -54,19 +54,22 @@ def detect_rd(model_type, img_path):
 
     """ MODEL INIT """
     if model_type == 'ResNet-50':
-        model_path = f"models\\{model_type}"
+        model_path = os.path.join('models', f"{model_type}")
         model = RoadSegNN(backbone_type=model_type)
 
     elif model_type == 'ResNet-101':
-        model_path = f"models\\{model_type}"
+        # model_path = f"models\\{model_type}"
+        model_path = os.path.join('models', f"{model_type}")
         model = RoadSegNN(backbone_type=model_type)
 
     elif model_type == 'Swin-T':
-        model_path = f"models\\{model_type}"
+        # model_path = f"models\\{model_type}"
+        model_path = os.path.join('models', f"{model_type}")
         model = RoadSegNN(backbone_type=model_type)
 
     elif model_type == 'SegNet':
-        model_path = f"models\\{model_type}"
+        # model_path = f"models\\{model_type}"
+        model_path = os.path.join('models', f"{model_type}")
         model = SegNet()
 
     model.load_weights(os.path.join(model_path, "ckpt.pth"))
