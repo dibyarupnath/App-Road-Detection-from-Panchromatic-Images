@@ -1,0 +1,5 @@
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+This code snippet was removed from the end of app.py and added to wsgi.py to facilitate Vercel deployment.

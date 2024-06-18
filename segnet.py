@@ -61,7 +61,8 @@ class SegNet(nn.Module):
         )
 
         self.pool = nn.MaxPool2d(
-            kernel_size=2, stride=2, padding=0, return_indices=True)
+            kernel_size=2, stride=2, padding=0, return_indices=True
+        )
 
         # Decoder
         self.stage1_decoder = nn.Sequential(
@@ -122,7 +123,7 @@ class SegNet(nn.Module):
         self.unpool = nn.MaxUnpool2d(kernel_size=2, stride=2, padding=0)
 
     def load_weights(self, weight):
-        state_dict = torch.load(weight, map_location='cpu')
+        state_dict = torch.load(weight, map_location="cpu")
         self.load_state_dict(state_dict, strict=True)
         print("Model loaded with {}.\n".format(weight))
 
@@ -188,7 +189,8 @@ class SegNet(nn.Module):
         # print()
 
         return x
-    
+
+
 # s = SegNet().cuda()
 # a = torch.rand((2,1,256,256)).cuda()
 # o = s(a)

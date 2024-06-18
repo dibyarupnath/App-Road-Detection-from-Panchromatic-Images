@@ -34,7 +34,7 @@ def detect_rd(model_type, img_path):
     # # Get the sat image
     # img_path = sys.argv[2]
 
-    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     H = 256
     W = 256
@@ -45,31 +45,31 @@ def detect_rd(model_type, img_path):
         [
             transforms.Resize(size),
             transforms.ToTensor(),
-            transforms.Normalize(0.2826, 0.2029)
+            transforms.Normalize(0.2826, 0.2029),
         ]
     )
 
-    img = transform(Image.open(img_path).convert('L')).unsqueeze(0)
+    img = transform(Image.open(img_path).convert("L")).unsqueeze(0)
     x = img.to(device, dtype=torch.float32)
 
     """ MODEL INIT """
-    if model_type == 'ResNet-50':
-        model_path = os.path.join('models', f"{model_type}")
+    if model_type == "ResNet-50":
+        model_path = os.path.join("models", f"{model_type}")
         model = RoadSegNN(backbone_type=model_type)
 
-    elif model_type == 'ResNet-101':
+    elif model_type == "ResNet-101":
         # model_path = f"models\\{model_type}"
-        model_path = os.path.join('models', f"{model_type}")
+        model_path = os.path.join("models", f"{model_type}")
         model = RoadSegNN(backbone_type=model_type)
 
-    elif model_type == 'Swin-T':
+    elif model_type == "Swin-T":
         # model_path = f"models\\{model_type}"
-        model_path = os.path.join('models', f"{model_type}")
+        model_path = os.path.join("models", f"{model_type}")
         model = RoadSegNN(backbone_type=model_type)
 
-    elif model_type == 'SegNet':
+    elif model_type == "SegNet":
         # model_path = f"models\\{model_type}"
-        model_path = os.path.join('models', f"{model_type}")
+        model_path = os.path.join("models", f"{model_type}")
         model = SegNet()
 
     model.load_weights(os.path.join(model_path, "ckpt.pth"))
@@ -78,28 +78,27 @@ def detect_rd(model_type, img_path):
 
     with torch.no_grad():
         y = model(x)
-        y = (y >= 0.5)*1.
+        y = (y >= 0.5) * 1.0
 
     # Sat image reopened for viewing
-    x2 = np.array(Image.open(img_path).convert('L'))
+    x2 = np.array(Image.open(img_path).convert("L"))
     y = F.interpolate(y, (x2.shape[0], x2.shape[1]))
     y = y[0].permute(1, 2, 0).cpu().numpy()
 
     plt.figure()
-    plt.imshow(x2, cmap='gray')
+    plt.imshow(x2, cmap="gray")
     plt.imshow(y, alpha=0.5)
-    plt.axis('off')
+    plt.axis("off")
 
-    output_path = os.path.abspath(os.path.join(
-        os.getcwd(), 'static', 'output.png'))
+    output_path = os.path.abspath(os.path.join(os.getcwd(), "static", "output.png"))
     print(output_path)
 
     # Save the plot as an image
-    plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
+    plt.savefig(output_path, bbox_inches="tight", pad_inches=0)
     plt.close()
 
-    output_path = os.path.join('static', 'output.png')
-    output_path = output_path.replace('\\', '\\\\')
+    output_path = os.path.join("static", "output.png")
+    output_path = output_path.replace("\\", "\\\\")
     # output_path = output_path.replace(')', '\)')
 
     print(f"Plot saved to {output_path}")

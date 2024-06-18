@@ -24,51 +24,66 @@ def display_image(image_path):
     image.show()
 
 
-app = Flask(__name__, template_folder=os.path.join(
-    os.path.dirname(__file__), 'templates'), static_folder=os.path.join(os.path.dirname(__file__), 'static'))
+app = Flask(
+    __name__,
+    template_folder=os.path.join(os.path.dirname(__file__), "templates"),
+    static_folder=os.path.join(os.path.dirname(__file__), "static"),
+)
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/detector')
+@app.route("/detector")
 def detector():
     # img_path = "static\\blank.png"
-    img_path = os.path.join('static', 'blank.png')
+    img_path = os.path.join("static", "blank.png")
     model_type_output = "None"
     input_img_name = "None"
     # output = "static\\blank.png"
-    output = os.path.join('static', 'blank.png')
-    return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, input_img_name=input_img_name, output_img=output)
+    output = os.path.join("static", "blank.png")
+    return render_template(
+        "road_detector.html",
+        input_img_path=img_path,
+        model_type_output=model_type_output,
+        input_img_name=input_img_name,
+        output_img=output,
+    )
     # return render_template('road_detector.html')
 
 
-@app.route('/predict', methods=['POST'])
+@app.route("/predict", methods=["POST"])
 def predict():
     model_type_output = ""
 
     # Get the selected model type
-    model_type = request.form['model_type']
+    model_type = request.form["model_type"]
 
     if model_type == "Blank":
         # img_path = "static\\blank.png"
-        img_path = os.path.join('static', 'blank.png')
+        img_path = os.path.join("static", "blank.png")
         model_type_output = "None"
         input_img_name = "None"
         # output = "static\\blank.png"
-        output = os.path.join('static', 'blank.png')
-        return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, input_img_name=input_img_name, output_img=output)
+        output = os.path.join("static", "blank.png")
+        return render_template(
+            "road_detector.html",
+            input_img_path=img_path,
+            model_type_output=model_type_output,
+            input_img_name=input_img_name,
+            output_img=output,
+        )
 
     # Get the INPUT Sat image
 
     # Saving the input-image-name to return to the frontend at the end of the function
-    input_img_name = request.form['img_path']
+    input_img_name = request.form["img_path"]
 
     # img_path = request.form['img_path']
-    img_path = os.path.join('.', 'static', 'test_data',
-                            request.form['img_path'])
+    img_path = os.path.join(".", "static", "test_data",
+                            request.form["img_path"])
 
     print(model_type, img_path)
 
@@ -77,20 +92,26 @@ def predict():
 
     # Returning Model Type
     # img_path = img_path.replace('\\', '\\\\')
-    if model_type == 'ResNet-50':
+    if model_type == "ResNet-50":
         model_type_output = "RoadSegNN with the ResNet-50 backbone"
 
-    elif model_type == 'ResNet-101':
+    elif model_type == "ResNet-101":
         model_type_output = "RoadSegNN with the ResNet-101 backbone"
 
-    elif model_type == 'Swin-T':
+    elif model_type == "Swin-T":
         model_type_output = "RoadSegNN with the Swin-T backbone"
 
-    elif model_type == 'SegNet':
+    elif model_type == "SegNet":
         model_type_output = "SegNet"
 
-    return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, input_img_name=input_img_name, output_img=output)
+    return render_template(
+        "road_detector.html",
+        input_img_path=img_path,
+        model_type_output=model_type_output,
+        input_img_name=input_img_name,
+        output_img=output,
+    )
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
