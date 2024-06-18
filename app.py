@@ -35,10 +35,13 @@ def index():
 
 @app.route('/detector')
 def detector():
-    img_path = "static\\blank.png"
+    # img_path = "static\\blank.png"
+    img_path = os.path.join('static', 'blank.png')
     model_type_output = "None"
-    output = "static\\blank.png"
-    return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, output_img=output)
+    input_img_name = "None"
+    # output = "static\\blank.png"
+    output = os.path.join('static', 'blank.png')
+    return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, input_img_name=input_img_name, output_img=output)
     # return render_template('road_detector.html')
 
 
@@ -50,13 +53,22 @@ def predict():
     model_type = request.form['model_type']
 
     if model_type == "Blank":
-        img_path = "static\\blank.png"
+        # img_path = "static\\blank.png"
+        img_path = os.path.join('static', 'blank.png')
         model_type_output = "None"
-        output = "static\\blank.png"
-        return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, output_img=output)
+        input_img_name = "None"
+        # output = "static\\blank.png"
+        output = os.path.join('static', 'blank.png')
+        return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, input_img_name=input_img_name, output_img=output)
 
-    # Get the sat image
-    img_path = request.form['img_path']
+    # Get the INPUT Sat image
+
+    # Saving the input-image-name to return to the frontend at the end of the function
+    input_img_name = request.form['img_path']
+
+    # img_path = request.form['img_path']
+    img_path = os.path.join('.', 'static', 'test_data',
+                            request.form['img_path'])
 
     print(model_type, img_path)
 
@@ -77,7 +89,7 @@ def predict():
     elif model_type == 'SegNet':
         model_type_output = "SegNet"
 
-    return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, output_img=output)
+    return render_template('road_detector.html', input_img_path=img_path, model_type_output=model_type_output, input_img_name=input_img_name, output_img=output)
 
 
 if __name__ == '__main__':

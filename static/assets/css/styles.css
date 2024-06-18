@@ -4,6 +4,19 @@
   font-family: "Gotu", sans-serif;
 }
 
+.header,
+.global-zoom {
+  zoom: 75%;
+}
+
+.local-zoom {
+  zoom: 107%;
+}
+
+.local-button-zoom {
+  zoom: 110%;
+}
+
 body {
   margin: 0;
   padding: 0;

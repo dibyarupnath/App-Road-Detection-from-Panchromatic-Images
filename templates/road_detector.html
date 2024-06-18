@@ -19,57 +19,62 @@
                 <h1>Road Detection from Satellite Images</h1>
             </div>
             <div class="content">
-                <form action="/predict" method="post">
-                    <table class="input-form">
-                        <tr>
-                            <td colspan="2">
-                                <a class="home-button" href="/"><i class="bi bi-house"></i> Home</a>
-                                <br><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="img_path">Input Satellite Image Path:</label></td>
-                            <td><input type="text" id="img_path" name="img_path" required></td>
-                            <br>
-                        </tr>
+				<div class="global-zoom">
+					<form action="/predict" method="post">
+						<table class="input-form">
+							<div class="local-zoom">
+								<tr class="local-zoom">
+									<td colspan="2">
+										<a class="home-button" href="/"><i class="bi bi-house"></i> Home</a>
+										<br><br>
+									</td>
+								</tr>
+								<tr class="local-zoom">
+									<td><label for="img_path">Input Satellite Image Path:</label></td>
+									<td><input type="text" id="img_path" name="img_path" required></td>
+									<br>
+								</tr>
 
-                        <tr>
-                            <td><label for="model_type">Road Detection Model:</label></td>
-                            <td>
-                                <select name="model_type" id="model_type">
-                                    <option value="ResNet-50">RoadSegNN (with ResNet-50 backbone)</option>
+								<tr class="local-zoom">
+									<td><label for="model_type">Road Detection Model:</label></td>
+									<td>
+										<select name="model_type" id="model_type">
+											<option value="ResNet-50">RoadSegNN (with ResNet-50 backbone)</option>
 
-                                    <option value="ResNet-101">RoadSegNN (with ResNet-101 backbone)</option>
-    
-                                    <option value="Swin-T">RoadSegNN (with Swin-T backbone)</option>
+											<option value="ResNet-101">RoadSegNN (with ResNet-101 backbone)</option>
+			
+											<option value="Swin-T">RoadSegNN (with Swin-T backbone)</option>
 
-                                    <option value="SegNet">SegNet</option>
+											<option value="SegNet">SegNet</option>
 
-                                    <option value="Blank">Blank Output</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input class="submit-button" type="submit" value="Detect Roads" /></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><p><strong>Model: </strong>{{ model_type_output }}</p></td>
-                        </tr>
-                        <tr>
-                            <!-- <td><p class="Input: Remote-Sensing Satellite Image"><img src="input.jpg path" alt="Input: Satellite Image"></p></td> -->
-                            <!-- <th><p>Input: Satellite Image<br><img src="{{ img_path }}" alt="Input: Satellite Image"></p></th> -->
-                            <th><p>Input: Satellite Image<br/><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"/></p></th>
+											<option value="Blank">Blank Output</option>
+										</select>
+									</td>
+								</tr>
+								<tr class="local-button-zoom">
+									<td><input class="submit-button" type="submit" value="Detect Roads" /></td>
+								</tr>
+							</div>
+							<tr class="local-zoom">
+								<td colspan="2"><p><strong>Model: </strong>{{ model_type_output }}<br/>
+												   <strong>Input File: </strong>{{ input_img_name }}</p></td>
+							</tr>
+							<tr>
+								<!-- <td><p class="Input: Remote-Sensing Satellite Image"><img src="input.jpg path" alt="Input: Satellite Image"></p></td> -->
+								<!-- <th><p>Input: Satellite Image<br><img src="{{ img_path }}" alt="Input: Satellite Image"></p></th> -->
+								<th><p>Input: Satellite Image<br/><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"/></p></th>
 
-                            <!-- {{ output_img }} is a value passed from detect_roads.py that contains the relative path to output.png -->
-                            <td><p><strong>Output: Roads Detected</strong><br/><img src="{{ output_img }}"  alt="" width="369" height="369"/></p></td>
-                        </tr>
-                        <!-- <tr>
-                            
-                            <td><p><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"/></p></td>
-                            <td><p><img src="{{ output_img }}"  alt="" width="369" height="369"/></p></td>
-                        </tr> -->
-                    </table>
-                </form>
+								<!-- {{ output_img }} is a value passed from detect_roads.py that contains the relative path to output.png -->
+								<td><p><strong>Output: Roads Detected</strong><br/><img src="{{ output_img }}"  alt="" width="369" height="369"/></p></td>
+							</tr>
+							<!-- <tr>
+								
+								<td><p><img src="{{ input_img_path }}" alt="" width="369" height="369" onerror="img.style.display='none'"/></p></td>
+								<td><p><img src="{{ output_img }}"  alt="" width="369" height="369"/></p></td>
+							</tr> -->
+						</table>
+					</form>
+				</div>
             </div>
         </div>
         
