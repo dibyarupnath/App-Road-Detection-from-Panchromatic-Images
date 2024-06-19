@@ -1,2 +1,3 @@
+./models/ResNet-50/ckpt.pth
 ./models/Segnet/ckpt.pth
 .env
