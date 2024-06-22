@@ -47,8 +47,8 @@ Printout is being carried.
             <th><center>Output - SegNet</center></th>
         </tr>
         <tr>
-            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="245" height="245"></center></td>
-            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="245" height="245"></center></td>
+            <td colspan=2><center><img src="./README_assets/1_input.jpg" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/1_SegNet.png" width="245" height="245"></center></td>
         </tr>
         <tr>
             <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
@@ -56,9 +56,9 @@ Printout is being carried.
             <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
         </tr>
         <tr>
-            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="245" height="245"></center></td>
-            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="245" height="245"></center></td>
-            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="245" height="245" ></center></td>
+            <td><center><img src="./README_assets/1_ResNet-50.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/1_ResNet-101.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/1_Swin-T.png" width="245" height="245" ></center></td>
         </tr>
     </table>
 </center>
@@ -72,8 +72,8 @@ Printout is being carried.
             <th><center>Output - SegNet</center></th>
         </tr>
         <tr>
-            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="245" height="245"></center></td>
-            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="245" height="245"></center></td>
+            <td colspan=2><center><img src="./README_assets/32_input.jpg" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/32_SegNet.png" width="245" height="245"></center></td>
         </tr>
         <tr>
             <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
@@ -81,9 +81,9 @@ Printout is being carried.
             <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
         </tr>
         <tr>
-            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="245" height="245"></center></td>
-            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="245" height="245"></center></td>
-            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="245" height="245" ></center></td>
+            <td><center><img src="./README_assets/32_ResNet-50.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/32_ResNet-101.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/32_Swin-T.png" width="245" height="245" ></center></td>
         </tr>
     </table>
 </center>
