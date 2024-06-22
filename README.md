@@ -23,7 +23,8 @@ For this project four models have been selected:
 
 
 ## Architecture of RoadSegNN Model (Novel Model)
-<img src="./README_assets/RoadSegNN%20Architecture.jpg" width="74%" height = "74%">  
+<!-- <img src="./README_assets/RoadSegNN%20Architecture.jpg" width="74%" height = "74%">   -->
+Printout is being carried.
 <hr/>
 
 ## Architecture of ResNet-50 & ResNet-101
