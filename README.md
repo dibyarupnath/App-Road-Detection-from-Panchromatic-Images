@@ -46,8 +46,8 @@ For this project four models have been selected:
             <th><center>Output - SegNet</center></th>
         </tr>
         <tr>
-            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="250" height="250"></center></td>
-            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="250" height="250"></center></td>
+            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="245" height="245"></center></td>
         </tr>
         <tr>
             <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
@@ -55,9 +55,9 @@ For this project four models have been selected:
             <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
         </tr>
         <tr>
-            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="250" height="250"></center></td>
-            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="250" height="250"></center></td>
-            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="250" height="250" ></center></td>
+            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="245" height="245" ></center></td>
         </tr>
     </table>
 </center>
@@ -71,8 +71,8 @@ For this project four models have been selected:
             <th><center>Output - SegNet</center></th>
         </tr>
         <tr>
-            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="240" height="240"></center></td>
-            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="240" height="240"></center></td>
+            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="245" height="245"></center></td>
         </tr>
         <tr>
             <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
@@ -80,9 +80,9 @@ For this project four models have been selected:
             <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
         </tr>
         <tr>
-            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="240" height="240"></center></td>
-            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="240" height="240"></center></td>
-            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="240" height="240" ></center></td>
+            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="245" height="245"></center></td>
+            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="245" height="245" ></center></td>
         </tr>
     </table>
 </center>
