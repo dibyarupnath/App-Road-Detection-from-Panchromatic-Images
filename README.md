@@ -23,7 +23,7 @@ For this project four models have been selected:
 
 
 ## Architecture of RoadSegNN Model (Novel Model)
-<img src="./README_assets/RoadSegNN%20Architecture.jpg" width="75%" height = "75%">  
+<img src="./README_assets/RoadSegNN%20Architecture.jpg" width="74%" height = "74%">  
 <hr/>
 
 ## Architecture of ResNet-50 & ResNet-101
@@ -34,63 +34,55 @@ For this project four models have been selected:
 <hr/>
 
 ## Architecture of SegNet Model
-<img src="./README_assets/SegNet%20Architecture.png"  height = "75%">
+<img src="./README_assets/SegNet%20Architecture.png"  height = "68%">
 <hr/>
 
 ## Sample Outputs
 ### Example 1:
 <center>
-<table style="margin-bottom:0;">
-    <tr>
-        <th><center>Input Image</center></th>
-        <th><center>Output - SegNet</center></th>
-    </tr>
-    <tr>
-        <td><center><img src="./README_assets/Input%2036.jpg"  height = "300"></center></td>
-        <td><center><img src="./README_assets/SegNet%20output%2036.png"  height = "300"></center></td>
-    </tr>
-</table>
-</center>
-<center>
-<table style="margin-top:0;">
-    <tr>
-        <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
-        <th><center>Output - RoadSegNN (ResNet-101 backbone)</center></th>
-        <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
-    </tr>
-    <tr>
-        <td><center><img src="./README_assets/ResNet-50%20output%2036.png"  height = "300" width = "300"></center></td>
-        <td><center><img src="./README_assets/ResNet-101%20output%2036.png"  height = "300" width = "300"></center></td>
-        <td><center><img src="./README_assets/Swin-T%20output%2036.png"  height = "300" width = "300"></center></td>
-    </tr>
-</table>
+    <table style="margin-bottom:0;">
+        <tr>
+            <th colspan=2><center>Input Image</center></th>
+            <th><center>Output - SegNet</center></th>
+        </tr>
+        <tr>
+            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="250" height="250"></center></td>
+            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="250" height="250"></center></td>
+        </tr>
+        <tr>
+            <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
+            <th><center>Output - RoadSegNN (ResNet-101 backbone)</center></th>
+            <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
+        </tr>
+        <tr>
+            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="250" height="250"></center></td>
+            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="250" height="250"></center></td>
+            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="250" height="250" ></center></td>
+        </tr>
+    </table>
 </center>
 <hr/>
 
 ### Example 2:
 <center>
-<table style="margin-bottom:0;">
-    <tr>
-        <th><center>Input Image</center></th>
-        <th><center>Output - SegNet</center></th>
-    </tr>
-    <tr>
-        <td><center><img src="./README_assets/Input%2036.jpg" width="280" height="280"></center></td>
-        <td><center><img src="./README_assets/SegNet%20output%2036.png" width="280" height="280"></center></td>
-    </tr>
-</table>
-</center>
-<center>
-<table style="margin-top:0;">
-    <tr>
-        <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
-        <th><center>Output - RoadSegNN (ResNet-101 backbone)</center></th>
-        <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
-    </tr>
-    <tr>
-        <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="280" height="280"></center></td>
-        <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="280" height="280"></center></td>
-        <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="280" height="280" ></center></td>
-    </tr>
-</table>
+    <table style="margin-bottom:0;">
+        <tr>
+            <th colspan=2><center>Input Image</center></th>
+            <th><center>Output - SegNet</center></th>
+        </tr>
+        <tr>
+            <td colspan=2><center><img src="./README_assets/Input%2036.jpg" width="250" height="250"></center></td>
+            <td><center><img src="./README_assets/SegNet%20output%2036.png" width="250" height="250"></center></td>
+        </tr>
+        <tr>
+            <th><center>Output - RoadSegNN (ResNet-50 backbone)</center></th>
+            <th><center>Output - RoadSegNN (ResNet-101 backbone)</center></th>
+            <th><center>Output - RoadSegNN (Swin-T backbone)</center></th>
+        </tr>
+        <tr>
+            <td><center><img src="./README_assets/ResNet-50%20output%2036.png" width="250" height="250"></center></td>
+            <td><center><img src="./README_assets/ResNet-101%20output%2036.png" width="250" height="250"></center></td>
+            <td><center><img src="./README_assets/Swin-T%20output%2036.png" width="250" height="250" ></center></td>
+        </tr>
+    </table>
 </center>
